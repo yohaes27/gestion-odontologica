@@ -1,0 +1,68 @@
+body{
+    background-color: #dfdfdf;
+}
+#contenedor {
+    font-size: 1em;
+    background-color: #ffffff;
+    border: #d3d3d3 1px solid;
+    text-align: justify;
+    margin: 10px auto;
+    width: 900px;
+}
+#encabezdo{
+    width: 900px;
+    height: 150px;
+    background: url(../imagenes/hands-is-hold-orthodontic-model-of-teeth-and-dental-mirror-on-pink-background-hand-wear-blue-latex-glove-photo.jpg) no-repeat;
+    border: #d3d3d3 1px solid;
+}
+#encabezdo h1{
+    text-align: center;
+    margin-top: 50px;
+}
+/* contenido */
+#contenido{
+    border: #d3d3d3 1px solid;
+    margin: 20px 20px 10px;
+    padding: 10px 15px;
+}
+
+#contenido h2 {
+    color: #0075ff;
+    border-bottom: #CFBFB5 1px solid;
+}
+
+#menu {
+    float: left;
+    width: 120px;
+    /* background-color: #D4FFFF; */
+}
+
+div#contenido {
+    border: #d3d3d3 1px solid;
+    margin:  20px 20px 10px 180px;
+    padding: 10px 15px;
+}
+
+#menu li {
+    border: #d3d3d3 3px solid;
+    background-color: #0075ff;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    text-align: center;
+    line-height: 30px;
+}
+
+#menu a{
+    display: block;
+    text-decoration: none;
+    color: #000000;
+}
+
+#menu li:hover{
+    background-color: #7092be;
+}
+
+#menu li:activa,#menu li:hover{
+    background-color: #7092be;
+}
+
