@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de gestion Odontologica</title>
+
     <link rel="stylesheet" href="Vista/CSS/estilos.css">
 
     <link href="Vista/jquery/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet" type="text/css"/>
 
-    <!--  -->
-    <script type="text/javascript" src="Vista/html/jquery/jquery-3.2.1-min.js"></script>
-      
-    <script src="Vista/jquery/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <!-- ______________________ -->
-    
     <script type="text/javascript" src="Vista/jquery/jquery.js"></script>
     
-
     <script src="Vista/js/script.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="Vista/jquery/jquery-3.2.1.min.js"></script>
+      
+    <script src="Vista/jquery/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    
  <script>
  </script>
 
@@ -25,7 +24,7 @@
 <body>
 
     <div id="contenedor">
-        <div id="encabezdo">
+        <div id="encabezado">
             <h1>Sistema de Gestion Odontologica</h1>
         </div>
         <ul id="menu">
@@ -33,6 +32,7 @@
             <li class="activa" ><a href="index.php?accion=asignar">Asignar</a></li>
             <li><a href="index.php?accion=consultar">Consultar cita</a></li>
             <li><a href="index.php?accion=cancelar">Cancelar Cita</a></li>
+            <li><a href="index.php?accion=medico">Medicos</a></li>
         </ul>
         <div id="contenido">
             <h2>Asignar cita</h2>
@@ -58,15 +58,12 @@
                     </tr>
                     <tr>
                         <td>Médico</td>
-                        <td>
-                            <select id="medico" name="medico" onchange="cargarHoras()">
-                                <input type="date" id="fecha" name="fecha" onchange="cargarHoras()">
-
-
+                            <td>
+                                <select id="medico" name="medico" onchange="cargarHoras()">
                                 <option value="-1" selected="selected">---Selecione el Médico</option>
-                            <?php
-                                while( $fila = $result->fetch_object())
-                                {
+                                <?php
+                                    while( $fila = $result->fetch_object())
+                                    {
                                 ?>
                                 <option value = <?php echo $fila->MedIdentificacion; ?> >
                                 <?php echo $fila->MedIdentificacion . " " . $fila->MedNombres ." ". $fila->MedApellidos; ?>
@@ -76,29 +73,14 @@
                         </td>
                     </tr>
 
+
                     <tr>
                         <td>Fecha</td>
                         <td>
                             <input type="date" id="fecha" name="fecha">
                         </td>
                     </tr>
-                    <tr>
-                        <td>Hora</td>
-                        <td>
-
-                            <select id="hora" name="hora" onmousedown="seleccionarHora()">
-                                <option value="-1" selected="selected">---Seleccione la hora ---</option>
-
-                            <!-- <select id="hora" name="hora">
-                                <option value="-1" selected="selected">---Seleccione la hora ---</option>
-                                <option>08:00:00</option>
-                                <option>08:20:00</option>
-                                <option>08:40:00</option>
-                                <option>09:00:00</option> -->
-                        </select>
-                        </td>
-                    </tr>
-
+                    
                     <tr>
                         <td>Consultorio</td>
 
@@ -118,18 +100,18 @@
                         </td>
                     </tr>
 
-
-
-                    <!-- <tr>
-                        <td>Consultorio</td>
+                    <tr>
+                        <td>Hora</td>
                         <td>
-                            <select id="consultorio" name="consultorio">
-                                <option value="-1" selected="selected">---Seleccione el Consultorio---</option>
-                                <option value="1">1 Consultas 1</option>
-                                <option value="2">2 Tratamientos 1</option>
+
+                            <select id="hora" name="hora" onmousedown="seleccionarHora()">
+                                <option value="-1" selected="selected">---Seleccione la hora ---</option>
                             </select>
+
                         </td>
-                    </tr> -->
+                    </tr>
+
+                    
                     <tr>
                         <td colspan="2">
                             <input type="submit" name="asignarEnviar" value="Enviar" id="asignarEnviar">
@@ -138,7 +120,7 @@
             </table>
 
             </form>
-<!-- para pasiente que aun no asido ingresado, y para que se ingrese -->
+
 
             <div id="frmPaciente" title="Agregar Nuevo Paciente">
                 <form id="agregarPaciente">
@@ -158,7 +140,7 @@
                         </tr>
                         <tr>
                             <td>Fecha de Nacimiento</td>
-                            <td><input type="text" name="PacNacimiento" id="PacNacimiento"></td>
+                            <td><input type="date" name="PacNacimiento" id="PacNacimiento"></td>
                         </tr>
                         <tr>
                             <td>Sexo</td>
@@ -176,7 +158,7 @@
                    
                 </form>
             </div>
-<!-- ------------------------- -->
+
 
         </div>
     </div>

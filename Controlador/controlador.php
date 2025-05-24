@@ -6,7 +6,6 @@ class Controlador {
     public function agregarCita($doc,$med,$fec,$hor,$con){
         $cita = new Cita(null, $fec, $hor, $doc, $med, $con, "Solicitada",      "Ninguna");
         $gestorCita = new GestorCita();
-        $gestorCita->agregarCita($cita);
         $id = $gestorCita->agregarCita($cita);
         $result = $gestorCita->consultarCitaPorId($id);
         require_once 'Vista/html/confirmarCita.php';
@@ -21,12 +20,13 @@ class Controlador {
         $result = $gestorCita->consultarCitasPorDocumento($doc);
         require_once 'Vista/html/consultarCitas.php';
     }
+
+    // consulta o busca el paciente
     public function consultarPaciente($doc){
         $gestorCita = new GestorCita();
         $result = $gestorCita->consultarPaciente($doc);
         require_once 'Vista/html/consultarPaciente.php';
     }
-
         
     public function agregarPaciente($doc,$nom,$ape,$fec,$sex){
         $paciente = new Paciente($doc, $nom, $ape, $fec, $sex);
@@ -38,6 +38,7 @@ class Controlador {
             echo "Error al grabar el paciente";
         }
     }
+    
 
     public function cargarAsignar(){
         $gestorCita = new GestorCita();
@@ -64,6 +65,8 @@ class Controlador {
         $result = $gestorCita->consultarCitaPorId($cita);
         require_once 'Vista/html/confirmarCita.php';
     }
+
+    // cansela la cita
     public function confirmarCancelarCita($cita){
         $gestorCita = new GestorCita();
         $registros = $gestorCita->cancelarCita($cita);
@@ -73,5 +76,32 @@ class Controlador {
         echo "Hubo un error al cancelar la cita";
         }
     }
+    public function listarMed(){
+        $gestorCita = new GestorCita();
+        $result = $gestorCita->listarMedicos();
+        require_once 'Vista/html/listarMedicos.php';
+    }
+    // elimana elmedico
+    public function eliminarMedico($cita){
+        $gestorCita = new GestorCita();
+        $registros = $gestorCita->medicoEliminar($cita);
+        if($registros > 0){
+        echo "El medico ha cido Eliminado con éxito";
+        } else {
+        echo "Hubo un error Eliminar al Medico";
+        }
+
+    }
+
+    // busca paciente // medico
+    public function consultarMedico($doc){
+        $gestorCita = new GestorCita();
+        $result = $gestorCita->consultaMedica($doc);
+        require_once 'Vista/html/medicosCosulta';
+    }
+    
 
 }
+
+
+?>

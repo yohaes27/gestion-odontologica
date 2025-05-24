@@ -8,22 +8,25 @@ body{
     text-align: justify;
     margin: 10px auto;
     width: 900px;
+    height: 600px; 
 }
-#encabezdo{
+#encabezado{
     width: 900px;
     height: 150px;
     background: url(../imagenes/hands-is-hold-orthodontic-model-of-teeth-and-dental-mirror-on-pink-background-hand-wear-blue-latex-glove-photo.jpg) no-repeat;
     border: #d3d3d3 1px solid;
 }
-#encabezdo h1{
+#encabezado h1{
     text-align: center;
     margin-top: 50px;
 }
 /* contenido */
 #contenido{
+   
     border: #d3d3d3 1px solid;
     margin: 20px 20px 10px;
     padding: 10px 15px;
+    
 }
 
 #contenido h2 {

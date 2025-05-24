@@ -25,7 +25,7 @@ class GestorCita {
         $conexion->cerrar();
         return $citaId ;
     } 
-     public function consultarCitaPorId($id){
+    public function consultarCitaPorId($id){
         $conexion = new Conexion();
         $conexion->abrir();
         $sql = "SELECT pacientes.* , medicos.*, consultorios.*, citas.*" . "FROM Pacientes as pacientes, Medicos as medicos, Consultorios as consultorios ,citas " . "WHERE citas.CitPaciente = pacientes.PacIdentificacion " . " AND citas.CitMedico = medicos.MedIdentificacion " . " AND citas.CitNumero = $id";
@@ -33,7 +33,8 @@ class GestorCita {
         $result = $conexion->obtenerResult();
         $conexion->cerrar();
         return $result ;
-    }
+    }  
+
     public function consultarCitasPorDocumento($doc){
         $conexion = new Conexion();
         $conexion->abrir();
@@ -45,6 +46,7 @@ class GestorCita {
  
     }
 
+    // consuta el pasiente mediante la identificacio
       public function consultarPaciente($doc){
         $conexion = new Conexion();
         $conexion->abrir();
@@ -55,6 +57,7 @@ class GestorCita {
         return $result ;
     }
 
+    // agregarmedico similar con el codigo de abajo
     public function agregarPaciente(Paciente    $paciente){
         $conexion = new Conexion();
         $conexion->abrir();
@@ -111,4 +114,44 @@ class GestorCita {
         return $filasAfectadas;
     }
      
+    
+    // medicos
+    public function listarMedicos(){
+        $conexion = new Conexion();
+        $conexion->abrir();
+        $sql = "SELECT MedIdentificacion , MedNombres , MedApellidos FROM medicos ";
+        $conexion->consulta($sql);
+        $result = $conexion->obtenerResult();
+        $conexion->cerrar();
+        if (!$result){
+            return [];
+        }
+        else{
+            return $result; 
+        }
+    }
+
+    // elimina medicos = aun no unciona
+    public function medicoEliminar($cita){
+        $conexion = new Conexion();
+        $conexion->abrir();
+        $sql = "delete medicos SET  where MedIdentificacion = $cita ";
+        $conexion->consulta($sql);
+        $filasAfectadas = $conexion->obtenerFilasAfectadas();
+        $conexion->cerrar();
+        return $filasAfectadas;
+    }
+
+    // consultar medico  
+      public function consultaMedica($doc){
+        $conexion = new Conexion();
+        $conexion->abrir();
+        $sql = "SELECT * FROM Medicos WHERE MEdIdentificacion = '$doc' ";
+        $conexion->consulta($sql);
+        $result = $conexion->obtenerResult();
+        $conexion->cerrar();
+        return $result ;
+      }
+
+
 }

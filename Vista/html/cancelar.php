@@ -6,20 +6,18 @@
     <title>Sistema de Gestion Odontologica</title>
     <link rel="stylesheet" href="vista/CSS/estilos.css">
     
-    <script type="text/javascript" src="Vista/html/jquery/jquery-3.2.1-min.js"></script>
-
-    <!-- <script type="text/javascript" src="Vista/jquery/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>      -->
+    <script type="text/javascript" src="Vista/js/script.js" ></script>  
     
-    <script type="text/javascript" src="Vista/js/script.js" ></script>
-
+    <script type="text/javascript" src="Vista/jquery/jquery.js"></script>
     
-<!-- estoy perdido -->
+    <script src="Vista/jquery/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+ 
 
 </head>
 <body>
 
     <div id="contenedor">
-        <div id="encabezdo">
+        <div id="encabezado">
             <h1>Sistema de Gestion Odontologica</h1>
         </div>
         <ul id="menu">
@@ -27,6 +25,7 @@
             <li><a href="index.php?accion=asignar">Asignar</a></li>
             <li><a href="index.php?accion=consultar">Consultar</a></li>
             <li class="activa"><a href="index.php?accion=cancelar">Cancelar Cita</a></li>
+            <li><a href="index.php?accion=medico">Medicos</a></li>
         </ul>
         <div id="contenido">
             <h2>Cancelar Cita</h2>
@@ -38,7 +37,7 @@
                     </tr>
 
                     <tr>
-                        <td colspan="2"><input type="button" value="Consultar"onclick="cancelarConsultar()"></td>
+                        <td colspan="2"><input type="button" id="cancelarConsultar" value="Consultar"onclick="cancelarCita()"></td>
                     </tr>
 
                     <tr>

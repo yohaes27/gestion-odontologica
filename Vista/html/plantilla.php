@@ -10,7 +10,7 @@
 <body>
 
     <div id="contenedor">
-        <div id="encabezdo">
+        <div id="encabezado">
             <h1>Sistema de Gestion Odontologica</h1>
         </div>
         <ul id="menu">
@@ -18,6 +18,7 @@
             <li><a href="index.php?accion=asignar">Asignar</a></li>
             <li><a href="index.php?accion=consultar">Consultar</a></li>
             <li><a href="index.php?accion=cancelar">Cancelar Cita</a></li>
+            <li><a href="inex.php?accion=medico">Medicos</a></li>
         </ul>
         <div id="contenido">
             <h2>Titolo de pagina</h2>
