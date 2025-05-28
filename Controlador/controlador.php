@@ -47,13 +47,6 @@ class Controlador {
         require_once 'Vista/html/asignar.php';
     }
 
-
-    // public function cargarAsignar(){
-    //     $gestorCita = new GestorCita();
-    //     $result = $gestorCita->consultarMedicos();
-    //     require_once 'Vista/html/asignar.php';
-    // }
-
     public function consultarHorasDisponibles($medico,$fecha){
         $gestorCita = new GestorCita();
         $result = $gestorCita->consultarHorasDisponibles($medico, $fecha);
@@ -88,7 +81,7 @@ class Controlador {
         if($registros > 0){
         echo "El medico ha cido Eliminado con éxito";
         } else {
-        echo "Hubo un error Eliminar al Medico";
+        echo "Hubo un error Eliminar al Medico ". $registros;
         }
 
     }
@@ -97,8 +90,21 @@ class Controlador {
     public function consultarMedico($doc){
         $gestorCita = new GestorCita();
         $result = $gestorCita->consultaMedica($doc);
-        require_once 'Vista/html/medicosCosulta';
+        require_once 'Vista\html\medicosCosulta.php';
     }
+
+    // agrega un medico a la base de datos
+    public function agregarMedico($doc,$nom,$ape,$contra,$rol){
+        $medico = new Medico($doc, $nom, $ape, $contra ,$rol);
+        $gestorCita = new GestorCita();
+        $registros = $gestorCita->agregarMedico($medico);
+        if($registros > 0){
+            echo "Se insertó el paciente con exito";
+        } else {
+            echo "Error al grabar el paciente";
+        }
+    }
+    
     
 
 }

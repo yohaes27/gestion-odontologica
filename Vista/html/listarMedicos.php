@@ -31,7 +31,7 @@
                               ?>
                         </td>
                         <td>
-                            <a href="#" >editar</a> 
+                            <a href="#" onclick="editarMedico(<?php  echo $fila->MedIdentificacion?>)" >editar</a> 
                         </td>
                         <td>
                             <a href="#" onclick="eliminarMedico(<?php  echo $fila->MedIdentificacion?>)" >eliminar</a>

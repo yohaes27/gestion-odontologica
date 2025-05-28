@@ -18,14 +18,14 @@ function consultarPaciente(){
     });
 }
 
-// para ingresar nuevo usuario
+// para ingresar nuevo usuario  FORMULARIO DE NUEBO PACIENTE
 function mostrarFormulario(){
     documento = "" + $("#asignarDocumento").val();
     $("#PacDocumento").attr("value",documento);
     $("#frmPaciente").dialog('open');
 }
 
-// nubo paciente
+// nuebo paciente
 function insertarPaciente(){
     queryString = $("#agregarPaciente").serialize();
     url = "index.php?accion=ingresarPaciente&" + queryString ;
@@ -76,49 +76,3 @@ function confirmarCancelar(numero){
     }
     $("#cancelarConsultar").trigger("click");
 }
-// medicos
-function listarMedicos(){
-    url = "index.php?accion=listarMedicos&listamedico=" + $("#listamedico").val() ;
-    $("#medico").load(url);
-}
-
-// eliminar medico
-function eliminarMedico(numero){
-    if(confirm("Esta seguro que quiere eliminar al medico con identificacion" + numero)){
-    $.get("index.php",{accion:'eliminarMedico',numero:numero},function(mensaje)
-    {
-    alert(mensaje);
-    });
-    }
-    $("#listamedico").trigger("click");
-}
-
-// buscar medico
-function consultarMedico(){
-    var url = "index.php?accion=consultarMedico&documento=" + $("#consulMedico").val(); 
-    $("#mostrarMedico").load(url,function(){
-    });
-}
-
-
-// para ingresar pacienttes /// ingresar medicos
-function agrgarMedico(){
-    documento = "" + $("#consulMedico").val();
-    $("#PacDocumento").attr("value",documento);
-    $("#frmPaciente").dialog('open');
-}
-
-// agregar medico nuevo mediante el formulario
-function mostrarFormularioMedico(){
-    documento = "" + $("#consulMedico").val();
-    $("#MedDocumento").attr("value" , documento);
-    $("#frmPaciente").dialog('open');
-}
-
-// nubo paciente
-// function insertarPaciente(){
-//     queryString = $("#agregarPaciente").serialize();
-//     url = "index.php?accion=ingresarPaciente&" + queryString ;
-//     $("#paciente").load(url);
-//     $("#frmPaciente").dialog('close'); 
-// }

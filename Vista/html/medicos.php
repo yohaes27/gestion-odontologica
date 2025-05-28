@@ -5,13 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicos</title>
 
-    <link rel="stylesheet" href="vista/CSS/estilos.css">
+    <!-- no cabiarlo de orden dejarlo haci -->
+    <!-- estilo -->
+    <link rel="stylesheet" href="Vista/CSS/estilos.css">
+
+    <!-- no cabiarlo de orden dejarlo haci -->
+    <!-- jquery -->
+    <link href="Vista/jquery/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet" type="text/css"/>
     
-    <script type="text/javascript" src="Vista/js/script.js" ></script>
-    
+    <!-- no cabiarlo de orden dejarlo haci -->
     <script type="text/javascript" src="Vista/jquery/jquery.js"></script>
     
-    <script src="Vista/jquery/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <!-- no cabiarlo de orden dejarlo haci -->
+    <script type="text/javascript" src="Vista/jquery/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+
+    <!-- no cabiarlo de orden dejarlo haci -->
+    <script type="text/javascript" src="Vista/jquery/jquery-3.2.1.min.js"></script>
+    
+    <!-- no cabiarlo de orden dejarlo haci -->
+    <!-- js personal  -->
+    <script type="text/javascript" src="Vista/js/script.js"></script>       
+ 
+    <script type="text/javascript" src="Vista/js/medico.js"></script>       
  
 </head>
 <body>
@@ -68,9 +83,9 @@
                 </table>
             </form>
 
-<!-- agrega paciente -->
-            <div id="frmPaciente" title="Agregar Nuevo Medico">
-                <form id="agregarPaciente">
+<!-- agrega medico -->
+            <div id="frmMedico" title="Agregar Nuevo Medico">
+                <form id="agregarMedico">
                     <table>
                         <tr>
                             <td>Documento</td>
@@ -84,6 +99,11 @@
                             <td>Apellidos</td>
                             <td><input type="text" name="MedApellidos" id="MedApellidos"></td>
                         </tr>
+                        <tr>
+                            <td>contraseña</td>
+                            <td><input type="password" id="MedContraseña" name="MedContraseña"></td>
+                        </tr>
+                        <tr><input type="number" id="MedRol" name="MedRol"></tr>
                     </table> 
                 </form>
             </div>

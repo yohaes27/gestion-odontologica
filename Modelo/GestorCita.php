@@ -72,6 +72,7 @@ class GestorCita {
         $conexion->cerrar();
         return $filasAfectadas;
     }
+
     // -------
     public function consultarMedicos(){
         $conexion = new Conexion();
@@ -131,11 +132,12 @@ class GestorCita {
         }
     }
 
-    // elimina medicos = aun no unciona
+    // elimina medicos = aun no uncionas
     public function medicoEliminar($cita){
         $conexion = new Conexion();
         $conexion->abrir();
-        $sql = "delete medicos SET  where MedIdentificacion = $cita ";
+        // $sql = "UPDATE medicos SET  idCargo = 2 " . " where medicos.MedIdentificacion = $cita ";   ESTE PUEDO USARLO PARA MODIFICAR
+        $sql = "DELETE FROM medicos WHERE medicos.MedIdentificacion = $cita ";
         $conexion->consulta($sql);
         $filasAfectadas = $conexion->obtenerFilasAfectadas();
         $conexion->cerrar();
@@ -153,5 +155,20 @@ class GestorCita {
         return $result ;
       }
 
+    // agregarmedico similar con el codigo de abajo medicos
+    public function agregarMedico(Medico    $medico){
+        $conexion = new Conexion();
+        $conexion->abrir();
+        $identificacion = $medico->obtenerIdentificacion();// octiede de paciente.php la identifcacion
+        $nombres = $medico->obtenerNombres();
+        $apellidos = $medico->obtenerApellidos();
+        $contraseña = $medico->obtenerContraseña();
+        $rol = $medico->obtenerRol();
+        $sql = "INSERT INTO medicos VALUES (  '$identificacion','$nombres','$apellidos' , '$contraseña', '$rol')";
+        $conexion->consulta($sql);
+        $filasAfectadas = $conexion->obtenerFilasAfectadas();
+        $conexion->cerrar();
+        return $filasAfectadas;
+    }
 
 }

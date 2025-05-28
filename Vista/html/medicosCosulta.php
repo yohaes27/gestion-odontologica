@@ -3,11 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <link rel="stylesheet" href="Vista/CSS/estilos.css">
+         
+        <link rel="stylesheet" href="Vista/CSS/estilos.css"> 
+        
+        <script type="text/javascript" src="Vista/jquery/jquery-3.2.1.min.js"></script>
 
-    <script type="text/javascript" src="Vista/js/script.js" ></script>
-
-    <script type="text/javascript" src="Vista/html/jquery/jquery-3.2.1-min.js"></script>
+        <script src="Vista/js/script.js" type="text/javascript"></script>
+   
+        <script src="Vista/js/medico.js" type="text/javascript"></script>
+   
     </head>
     <body>
         <?php
@@ -37,6 +41,7 @@
             else {
         ?>
                 <p>Este medico no se encuentra registrado.</p>
+
                 <input type="button" name="ingPaciente" id="ingPaciente" value="Ingresar Medico" onclick="mostrarFormularioMedico()">
         <?php
             }

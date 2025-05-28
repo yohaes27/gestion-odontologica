@@ -5,21 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de gestion Odontologica</title>
 
+    <!-- no cabiarlo de orden dejarlo haci -->
+    <!-- estilo -->
     <link rel="stylesheet" href="Vista/CSS/estilos.css">
 
+    <!-- no cabiarlo de orden dejarlo haci -->
+    <!-- jquery -->
     <link href="Vista/jquery/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet" type="text/css"/>
-
+    
+    <!-- no cabiarlo de orden dejarlo haci -->
     <script type="text/javascript" src="Vista/jquery/jquery.js"></script>
     
-    <script src="Vista/js/script.js" type="text/javascript"></script>
+    <!-- no cabiarlo de orden dejarlo haci -->
+    <script type="text/javascript" src="Vista/jquery/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 
+    <!-- no cabiarlo de orden dejarlo haci -->
     <script type="text/javascript" src="Vista/jquery/jquery-3.2.1.min.js"></script>
-      
-    <script src="Vista/jquery/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     
- <script>
- </script>
-
+    <!-- no cabiarlo de orden dejarlo haci -->
+    <!-- js personal  -->
+    <script type="text/javascript" src="Vista/js/script.js"></script>       
+ 
 </head>
 <body>
 
@@ -38,7 +44,7 @@
             <h2>Asignar cita</h2>
             <p>Cotenido de  la pagina</p>
 
-            <form id="frmasignar" action="index.php?accion=guardarCita" method="post">
+            <form id="frmPacienter" action="index.php?accion=guardarCita" method="post">
                 <table>
                      <tr>
                         <td>Documento del paciente</td>
